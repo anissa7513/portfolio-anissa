@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anissa | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --secondary: #3a7bd5;
+            --accent: #ff007a;
+            --glass: rgba(255, 255, 255, 0.1);
+            --text: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #141e30);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* NAVIGATION GLASS */
+        nav {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 20px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        nav a:hover {
+            background: var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        /* HERO SECTION */
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5rem;
+            background: linear-gradient(to right, #00d2ff, #91eae4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 5px 15px rgba(0,210,255,0.4));
+        }
+
+        /* CONTENEUR LARGE */
+        .container { width: 90%; max-width: 1400px; margin: 0 auto; padding: 50px 0; }
+
+        section { 
+            margin-bottom: 100px; 
+            opacity: 0; 
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        section.visible { opacity: 1; transform: translateY(0); }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h2::after { content: ''; flex: 1; height: 2px; background: linear-gradient(to right, var(--primary), transparent); }
+
+        /* CARDS DYNAMIQUES */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* LOGOS COMPETENCES ANIMÉS */
+        .skills-wrap { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .skill-box {
+            text-align: center;
+            padding: 20px;
+            transition: 0.3s;
+        }
+        .skill-box i { font-size: 3rem; transition: 0.5s; }
+        .skill-box:hover i { transform: rotateY(360deg) scale(1.2); color: var(--primary); }
+
+        /* IMAGES PROJETS */
+        .img-container {
+            width: 100%;
+            height: 220px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .card:hover .img-container img { transform: scale(1.1); }
+
+        /* BOUTONS STYLE "CYBER" */
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: auto;
+            transition: 0.3s;
+            text-align: center;
+        }
+        .btn:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); }
+
+        /* CONTACT & MAP */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        iframe { width: 100%; height: 400px; border-radius: 15px; border: 2px solid var(--primary); filter: grayscale(0.5) invert(0.9); }
+
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            color: white; margin-bottom: 15px; border-radius: 8px;
+        }
+
+        /* DIPLOMES LIST */
+        .diploma-item {
+            padding: 15px; margin-bottom: 10px;
+            background: linear-gradient(90deg, rgba(0,210,255,0.1), transparent);
+            border-left: 4px solid var(--primary);
+        }
+
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#profil">Profil</a>
+    <a href="#competences">Compétences</a>
+    <a href="#projets">Projets</a>
+    <a href="#stages">Stages</a>
+    <a href="#grilles">Grilles</a>
+    <a href="#veille">Veille</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<header>
+    <h1 id="main-title">ANISSA MHAMDI</h1>
+    <p style="letter-spacing: 5px; color: var(--primary); font-weight: bold;">BTS SIO SLAM // DEVELOPER</p>
+</header>
+
+<div class="container">
+
+    <section id="profil">
+        <h2><i class="fas fa-user"></i> PROFIL</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>À propos de moi</h3><br>
+                <p>Anissa MHAMDI, étudiante en première année de BTS SIO (Services Informatiques aux Organisations) dans l'option SLAM (Solutions Logicielles et Application Métier).</p></br> Je me spécialise donc dans le domaine du développement. Retrouvez ci-dessous les différentes études, et projets professionnels que j'ai pu entreprendre au sein de ma carrière.</p>
+            </div>
+            <div class="card">
+                <h3>Diplômes</h3>
+                <div class="diploma-item"><strong>BTS SIO SLAM</strong> - Lycée Louis le grand (En cours)</div>
+                <div class="diploma-item"><strong>Bac STI2D SIN</strong> - Spécialité Systèmes Information</div>
+                <div class="diploma-item"><strong>Brevet des Collèges</strong> - Mention assez bien</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="competences">
+        <h2><i class="fas fa-code"></i> COMPÉTENCES</h2>
+        <div class="skills-wrap">
+            <div class="skill-box"><i class="fab fa-python" style="color: #3776ab;"></i><p>Python</p></div>
+            <div class="skill-box"><i class="fab fa-html5" style="color: #e34f26;"></i><p>HTML5</p></div>
+            <div class="skill-box"><i class="fab fa-css3-alt" style="color: #1572b6;"></i><p>CSS</p></div>
+            <div class="skill-box"><i class="fab fa-js" style="color: #f7df1e;"></i><p>JavaScript</p></div>
+            <div class="skill-box"><i class="fas fa-microchip" style="color: #00979d;"></i><p>Arduino</p></div>
+            <div class="skill-box"><i class="fas fa-database" style="color: #4479a1;"></i><p>MySQL</p></div>
+            <div class="skill-box"><i class="fab fa-php" style="color: #777bb4;"></i><p>PHP</p></div>
+        </div>
+    </section>
+
+    <section id="projets">
+        <h2><i class="fas fa-project-diagram"></i> PROJETS</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Traceur GPS</h3>
+                <span style="color: var(--primary);">2024</span>
+                <p>Système embarqué utilisant Arduino pour le suivi en temps réel.</p>
+                <div class="img-container"><img src="traceur.webp" alt=""></div>
+                <a href="#" class="btn">Détails Projet</a>
+            </div>
+            <div class="card">
+                <h3>Site BS IMMO</h3>
+                <span style="color: var(--primary);">2025</span>
+                <p>Application web de gestion immobilière avec espace client sécurisé.</p>
+                <div class="img-container"><img src="bs immo.png" alt=""></div>
+                <a href="https://cabinet-bsimmo.com/" class="btn">Voir le Site</a>
+                <button= 
+            </div>
+        </div>
+    </section>
+
+    <section id="stages">
+        <h2><i class="fas fa-briefcase"></i> STAGES</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>MEMMO IMMO</h3>
+                <p>Analyse et développement de modules internes.</p>
+                <a href="#" class="btn">Rapport de stage</a>
+            </div>
+            <div class="card">
+                <h3>BENREGUIG</h3>
+                <p>Maintenance applicative et support technique.</p>
+                <a href="#" class="btn">Rapport de stage</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="grilles">
+        <h2><i class="fas fa-table"></i> GRILLES DE COMPÉTENCES</h2>
+        <div class="grid">
+            <div class="card" style="border-left: 5px solid #27ae60;">
+                <h3>Grille MEMMO</h3>
+                <p>Fichier Excel des compétences BTS.</p>
+                <a href="#" class="btn" style="border-color: #27ae60; color: #27ae60;">Télécharger Excel</a>
+            </div>
+            <div class="card" style="border-left: 5px solid #27ae60;">
+                <h3>Grille BENREGUIG</h3>
+                <p>Fichier Excel des compétences BTS.</p>
+                <a href="#" class="btn" style="border-color: #27ae60; color: #27ae60;">Télécharger Excel</a>
+            </div>
+        </div>
+    </section>
+
+<section id="veille">
+        <h2><i class="fas fa-eye"></i> VEILLE : LE NO-CODE</h2>
+        
+        <p style="text-align: center; max-width: 900px; margin: 0 auto 40px auto; line-height: 1.6; color: #ccc;">
+            Le <strong>No-Code</strong> est une technologie permettant de créer des applications et des sites web sans écrire de code manuellement.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+            
+            <div class="card">
+                <h3>L'essor du No-Code</h3>
+                <span style="color: var(--primary); font-style: italic; font-size: 0.9rem;">Source: Journal du Net (2026)</span>
+                <p class="desc" style="margin-top: 10px;">Analyse sur la croissance exponentielle des solutions visuelles dans le milieu professionnel.</p>
+                
+                <div class="img-container" style="width: 80%; margin: 15px auto;">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=500&q=60" alt="Veille 1">
+                </div>
+                <div class="actions">
+                    <a href="https://www.journaldunet.com" target="_blank" style="color: var(--primary)"> Lire l'article</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Bubble vs Webflow</h3>
+                <span style="color: var(--primary); font-style: italic; font-size: 0.9rem;">Source: WeLoveDevs</span>
+                <p class="desc" style="margin-top: 10px;">Comparatif détaillé des deux plateformes leaders pour le développement d'apps sans code.</p>
+                
+                <div class="img-container" style="width: 80%; margin: 15px auto;">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=500&q=60" alt="Veille 2">
+                </div>
+                <div class="actions">
+                    <a href="https://bubble.io" target="_blank" style="color: var(--primary)" class="btn-black">Lire l'article</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>IA et No-Code</h3>
+                <span style="color: var(--primary); font-style: italic; font-size: 0.9rem;">Source: ZDNet</span>
+                <p class="desc" style="margin-top: 10px;">Comment l'intelligence artificielle générative révolutionne la création visuelle.</p>
+                
+                <div class="img-container" style="width: 80%; margin: 15px auto;">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=500&q=60" alt="Veille 3">
+                </div>
+                <div class="actions">
+                    <a href="https://www.zdnet.fr" target="_blank" style="color: var(--primary)" class="btn-black">Lire l'article</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Sécurité No-Code</h3>
+                <span style="color: var(--primary); font-style: italic; font-size: 0.9rem;">Source: LeMagIT</span>
+                <p class="desc" style="margin-top: 10px;">Les enjeux de la protection des données dans un environnement automatisé.</p>
+                
+                <div class="img-container" style="width: 80%; margin: 15px auto;">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=500&q=60" alt="Veille 4">
+                </div>
+                <div class="actions">
+                    <a href="https://www.lemagit.fr" target="_blank" style="color: var(--primary)" class="btn-black">Lire l'article</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2><i class="fas fa-envelope"></i> CONTACT</h2>
+        <div class="contact-grid">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167998.10803373053!2d2.27701984!3d48.8587053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e63d1411201399%3A0x10881a131f45910!2sParis!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy"></iframe>
+            <div class="card">
+                <form action="mailto:ton-email@gmail.com" method="POST" enctype="text/plain">
+                    <div class="form-group"><input type="text" placeholder="Nom"></div>
+                    <div class="form-group"><input type="email" placeholder="Email"></div>
+                    <div class="form-group"><textarea rows="5" placeholder="Votre message..."></textarea></div>
+                    <button type="submit" class="btn" style="width: 100%;">ENVOYER LE MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer style="padding: 50px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+    <p>Créé par Anissa &copy; 2026</p>
+</footer>
+
+<script>
+    // Petit script pour faire apparaître les sections au scroll
+    const observerOptions = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+</html>
