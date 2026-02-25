@@ -360,14 +360,22 @@
 </div>
 
 <div id="pharmaModal" class="modal">
-    <div class="modal-content" style="max-width: 1000px; width: 90%; height: 85vh; display: flex; flex-direction: column;">
-        <span class="close-modal" onclick="closePharmaModal()">×</span>
-        <h2 style="border:none; margin-bottom: 20px;">Documentation : PharmaSi</h2>
-        <div style="flex-grow: 1; overflow-y: auto; background: #fff; border-radius: 8px; padding: 0;">
-            <iframe src="https://docs.google.com/gview?url=https://anissa7513.github.io/portfolio-anissa/manuel_utilisateur.docx&embedded=true" style="width: 100%; height: 100%; border: none;"></iframe>
+    <div class="modal-content" style="max-width: 1000px; width: 95%; height: 90vh; display: flex; flex-direction: column; padding: 25px;">
+        
+        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+            <h2 style="margin: 0; flex: 1;">Documentation : PharmaSi</h2>
+            <span class="close-modal" onclick="closePharmaModal()" style="position: static; font-size: 2.5rem; cursor: pointer;">&times;</span>
         </div>
-        <div style="text-align: left; padding: 15px 0 0 0; font-size: 0.9rem;">
-            <p><strong>Note :</strong> Ce document présente l'analyse fonctionnelle et technique de l'application PharmaSi.</p>
+        
+        <div style="flex-grow: 1; overflow-y: auto; background: #fff; border-radius: 8px;">
+            <iframe 
+                src="https://docs.google.com/gview?url=https://anissa7513.github.io/portfolio-anissa/manuel_utilisateur.docx&embedded=true" 
+                style="width: 100%; height: 100%; border: none; filter: none !important;">
+            </iframe>
+        </div>
+
+        <div style="text-align: left; padding-top: 15px; font-size: 0.9rem; color: #ccc;">
+            <p><strong>Note :</strong> Ce document présente le manuel utilisateur de l'application PharmaSi.</p>
         </div>
     </div>
 </div>
@@ -422,4 +430,3 @@
 
 </body>
 </html>
-
