@@ -184,7 +184,7 @@
             border-left: 4px solid var(--primary);
         }
 
-        /* MODALE 3D */
+        /* MODALE 3D & DOC */
         .modal {
             display: none;
             position: fixed;
@@ -214,18 +214,6 @@
             cursor: pointer;
             color: var(--primary);
         }
-
-        .model-viewer-placeholder {
-            width: 100%;
-            height: 400px;
-            background: #000;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
     </style>
 </head>
 <body>
@@ -292,15 +280,26 @@
                 <h3>Traceur GPS</h3>
                 <span style="color: var(--primary);">2024</span>
                 <p>Système embarqué utilisant Arduino pour le suivi en temps réel.</p>
-                <div class="img-container"><img src="traceur.webp" alt=""></div>
+                <div class="img-container"><img src="traceur.webp" alt="Traceur GPS"></div>
                 <a href="javascript:void(0)" onclick="openTraceurModal()" class="btn">Détails Projet</a>
             </div>
+
             <div class="card">
                 <h3>Site BS IMMO</h3>
                 <span style="color: var(--primary);">2025</span>
                 <p>Application web de gestion immobilière avec espace client sécurisé.</p>
-                <div class="img-container"><img src="bs immo.png" alt=""></div>
+                <div class="img-container"><img src="bs immo.png" alt="BS IMMO"></div>
                 <a href="https://cabinet-bsimmo.com/" target="_blank" class="btn">Voir le Site</a>
+            </div>
+
+            <div class="card">
+                <h3>PharmaSi</h3>
+                <span style="color: var(--primary);">2026</span>
+                <p>Solution de gestion d'officine pharmaceutique et suivi des stocks.</p>
+                <div class="img-container">
+                    <img src="logoPharmaSI.png" alt="Projet PharmaSi">
+                </div>
+                <a href="javascript:void(0)" onclick="openPharmaModal()" class="btn">Détails Projet</a>
             </div>
         </div>
     </section>
@@ -331,63 +330,6 @@
         </div>
     </section>
 
-    <section id="veille">
-        <h2><i class="fas fa-eye"></i> VEILLE : LE NO-CODE</h2>
-        <p style="text-align: center; max-width: 900px; margin: 0 auto 40px auto; line-height: 1.6; color: #ccc;">
-            Le <strong>No-Code</strong> est une technologie permettant de créer des applications et des sites web sans écrire de code manuellement.
-        </p>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-            <div class="card">
-                <h3>L'essor du No-Code</h3>
-                <span style="color: var(--primary); font-style: italic; font-size: 0.9rem;">Source: Journal du Net (2026)</span>
-                <p class="desc" style="margin-top: 10px;">Analyse sur la croissance exponentielle des solutions visuelles dans le milieu professionnel.</p>
-                <div class="img-container" style="width: 80%; margin: 15px auto;">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=500&q=60" alt="Veille 1">
-                </div>
-                <div class="actions">
-                    <a href="https://www.journaldunet.com" target="_blank" style="color: var(--primary); text-decoration: none;"> Lire l'article</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>Bubble vs Webflow</h3>
-                <span style="color: var(--primary); font-style: italic; font-size: 0.9rem;">Source: WeLoveDevs</span>
-                <p class="desc" style="margin-top: 10px;">Comparatif détaillé des deux plateformes leaders pour le développement d'apps sans code.</p>
-                <div class="img-container" style="width: 80%; margin: 15px auto;">
-                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=500&q=60" alt="Veille 2">
-                </div>
-                <div class="actions">
-                    <a href="https://bubble.io" target="_blank" style="color: var(--primary); text-decoration: none;">Lire l'article</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>IA et No-Code</h3>
-                <span style="color: var(--primary); font-style: italic; font-size: 0.9rem;">Source: ZDNet</span>
-                <p class="desc" style="margin-top: 10px;">Comment l'intelligence artificielle générative révolutionne la création visuelle.</p>
-                <div class="img-container" style="width: 80%; margin: 15px auto;">
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=500&q=60" alt="Veille 3">
-                </div>
-                <div class="actions">
-                    <a href="https://www.zdnet.fr" target="_blank" style="color: var(--primary); text-decoration: none;">Lire l'article</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>Sécurité No-Code</h3>
-                <span style="color: var(--primary); font-style: italic; font-size: 0.9rem;">Source: LeMagIT</span>
-                <p class="desc" style="margin-top: 10px;">Les enjeux de la protection des données dans un environnement automatisé.</p>
-                <div class="img-container" style="width: 80%; margin: 15px auto;">
-                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=500&q=60" alt="Veille 4">
-                </div>
-                <div class="actions">
-                    <a href="https://www.lemagit.fr" target="_blank" style="color: var(--primary); text-decoration: none;">Lire l'article</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="contact">
         <h2><i class="fas fa-envelope"></i> CONTACT</h2>
         <div class="contact-grid">
@@ -402,31 +344,30 @@
             </div>
         </div>
     </section>
-
 </div>
 
-
-//3D MODAL
 <div id="traceurModal" class="modal">
     <div class="modal-content">
-        <span class="close-modal" onclick="closeTraceurModal()">&times;</span>
+        <span class="close-modal" onclick="closeTraceurModal()">×</span>
         <h2 style="border:none; margin-bottom: 20px;">Détails : Traceur GPS 3D</h2>
-        
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
-
-            <model-viewer 
-                src="traceur_3d.glb" 
-                ar 
-                camera-controls 
-                touch-action="pan-y" 
-                autoplay 
-                style="width: 100%; height: 400px; background-color: #000; border-radius: 10px;">
-            </model-viewer>
-
+        <model-viewer src="traceur_3d.glb" ar camera-controls touch-action="pan-y" autoplay style="width: 100%; height: 400px; background-color: #000; border-radius: 10px;"></model-viewer>
         <div style="text-align: left; padding: 20px; line-height: 1.6;">
             <h3 style="color:var(--primary)">Fonctionnement du dispositif :</h3>
-            <p>Ce traceur GPS haute précision a été conçu pour sécuriser des objets mobiles. Équipé d'un module <strong>SIM800L</strong> et d'un <strong>Arduino Nano</strong>, il récupère les coordonnées géographiques en temps réel et les transmet via le réseau GSM vers une plateforme de monitoring.</p>
-            <p style="margin-top:10px;">Le boîtier a été entièrement modélisé sous Blender pour optimiser l'encombrement des composants et assurer une étanchéité IP65.</p>
+            <p>Ce traceur GPS haute précision a été conçu pour sécuriser des objets mobiles. Équipé d'un module <strong>SIM800L</strong> et d'un <strong>Arduino Nano</strong>, il récupère les coordonnées géographiques en temps réel.</p>
+        </div>
+    </div>
+</div>
+
+<div id="pharmaModal" class="modal">
+    <div class="modal-content" style="max-width: 1000px; width: 90%; height: 85vh; display: flex; flex-direction: column;">
+        <span class="close-modal" onclick="closePharmaModal()">×</span>
+        <h2 style="border:none; margin-bottom: 20px;">Documentation : PharmaSi</h2>
+        <div style="flex-grow: 1; overflow-y: auto; background: #fff; border-radius: 8px; padding: 0;">
+            <iframe src="https://docs.google.com/gview?url=https://anissa7513.github.io/portfolio-anissa/PharmaSi.docx&embedded=true" style="width: 100%; height: 100%; border: none;"></iframe>
+        </div>
+        <div style="text-align: left; padding: 15px 0 0 0; font-size: 0.9rem;">
+            <p><strong>Note :</strong> Ce document présente l'analyse fonctionnelle et technique de l'application PharmaSi.</p>
         </div>
     </div>
 </div>
@@ -450,22 +391,32 @@
         observer.observe(section);
     });
 
-    // Fonctions Modale
+    // Fonctions Modale Traceur
     function openTraceurModal() {
         document.getElementById("traceurModal").style.display = "block";
         document.body.style.overflow = "hidden"; 
     }
-
     function closeTraceurModal() {
         document.getElementById("traceurModal").style.display = "none";
         document.body.style.overflow = "auto";
     }
 
+    // Fonctions Modale PharmaSi
+    function openPharmaModal() {
+        document.getElementById("pharmaModal").style.display = "block";
+        document.body.style.overflow = "hidden"; 
+    }
+    function closePharmaModal() {
+        document.getElementById("pharmaModal").style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+
+    // Fermeture au clic extérieur
     window.onclick = function(event) {
-        let modal = document.getElementById("traceurModal");
-        if (event.target == modal) {
-            closeTraceurModal();
-        }
+        let traceur = document.getElementById("traceurModal");
+        let pharma = document.getElementById("pharmaModal");
+        if (event.target == traceur) closeTraceurModal();
+        if (event.target == pharma) closePharmaModal();
     }
 </script>
 
