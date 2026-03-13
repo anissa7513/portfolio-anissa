@@ -107,8 +107,12 @@
         /* CARDS DYNAMIQUES */
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
+        }
+        
+        #projets .grid {
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .card {
@@ -519,6 +523,7 @@ const observerOptions = { threshold: 0.2 };
 </script>
 </body>
 </html>
+
 
 
 
