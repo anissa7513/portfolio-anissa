@@ -391,20 +391,26 @@
         </div>
     </section>
 
-    <section id="contact">
-        <h2><i class="fas fa-envelope"></i> CONTACT</h2>
-        <div class="contact-grid">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337790827291!2d2.3421312!3d48.848037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671e62867086f%3A0xc39265f2479e0000!2sLyc%C3%A9e%20Louis-le-Grand!5e0!3m2!1sfr!2sfr!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
-            <div class="card">
-                <form action="mailto:ton-email@gmail.com" method="POST" enctype="text/plain">
-                    <div class="form-group"><input type="text" placeholder="Nom"></div>
-                    <div class="form-group"><input type="email" placeholder="Email"></div>
-                    <div class="form-group"><textarea rows="5" placeholder="Votre message..."></textarea></div>
-                    <button type="submit" class="btn" style="width: 100%;">ENVOYER LE MESSAGE</button>
-                </form>
-            </div>
+   <section id="contact">
+    <h2><i class="fas fa-envelope"></i> CONTACT</h2>
+    <div class="contact-grid">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337790827291!2d2.3421312!3d48.848037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671e62867086f%3A0xc39265f2479e0000!2sLyc%C3%A9e%20Louis-le-Grand!5e0!3m2!1sfr!2sfr!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+        <div class="card">
+            <form action="https://formspree.io/f/xaqpjzrn" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Nom" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">ENVOYER LE MESSAGE</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 </div>
 
 </div> <div id="traceurModal" class="modal">
@@ -486,6 +492,7 @@ const observerOptions = { threshold: 0.2 };
 </script>
 </body>
 </html>
+
 
 
 
