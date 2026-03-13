@@ -303,6 +303,16 @@
                 <a href="javascript:void(0)" onclick="openPharmaModal()" class="btn">Détails Projet</a>
             </div>
         </div>
+
+        <div class="card">
+            <h3>Site Supermarché</h3>
+            <span style="color: var(--primary);">2025</span>
+            <p>Site web de présentation et gestion d'un supermarché.</p>
+            <div class="img-container">
+                <img src="supermarche.png" alt="Site Supermarché">
+            </div>
+            <a href="javascript:void(0)" onclick="openSupermarcheModal()" class="btn">Détails Projet</a>
+        </div>
     </section>
 
     <section id="stages">
@@ -441,6 +451,21 @@
     </div>
 </div>
 
+<div id="supermarcheModal" class="modal">
+    <div class="modal-content" style="max-width: 1100px; width: 95%; height: 90vh; display: flex; flex-direction: column; padding: 25px;">
+        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+            <h2 style="margin: 0; flex: 1;">Projet : Site Supermarché</h2>
+            <span class="close-modal" onclick="closeSupermarcheModal()" style="position: static; font-size: 2.5rem; cursor: pointer;">×</span>
+        </div>
+        <div style="flex-grow: 1; background: #fff; border-radius: 8px;">
+            <iframe 
+                src="supermarche/index.html" 
+                style="width: 100%; height: 100%; border: none; border-radius: 8px;">
+            </iframe>
+        </div>
+    </div>
+</div>
+    
 <div id="grilleModal" class="modal">
     <div class="modal-content" style="max-width: 1100px; width: 95%; height: 90vh; display: flex; flex-direction: column; padding: 25px;">
         <div style="display: flex; align-items: center; margin-bottom: 20px;">
@@ -495,6 +520,7 @@ const observerOptions = { threshold: 0.2 };
 </script>
 </body>
 </html>
+
 
 
 
